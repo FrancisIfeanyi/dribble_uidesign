@@ -19,52 +19,57 @@ class ExerciseTile extends StatelessWidget {
     return
       Padding(
         padding: const EdgeInsets.only(bottom: 20.0),
-        child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(22.0),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
+        child: Scrollbar(
+          child: SingleChildScrollView(
+            child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(22.0),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(18.0),
-                  child: Container(
-                    padding: EdgeInsets.all(16.0),
-                    color: Colors.orange,
-                    child: Icon(icon,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 12.0,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
                   children: [
-                    Text(exerciseName,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(18.0),
+                      child: Container(
+                        padding: EdgeInsets.all(16.0),
+                        color: color,
+                        child: Icon(icon,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    SizedBox(height: 8.0,),
-                    Text(numberOfExercises.toString() + ' ' + 'Exercises',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                    SizedBox(width: 12.0,),
+
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(exerciseName,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(height: 8.0,),
+                        Text(numberOfExercises.toString() + ' ' + 'Exercises',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
+                Icon(Icons.more_horiz),
               ],
             ),
-            Icon(Icons.more_horiz),
-          ],
-        ),
     ),
+          ),
+        ),
       );
   }
 }

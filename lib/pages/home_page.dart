@@ -10,14 +10,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController My_Controller1= new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue[800],
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: '' ),
-        BottomNavigationBarItem(icon: Icon(Icons.wallet), label: '' ),
-        BottomNavigationBarItem(icon: Icon(Icons.telegram), label: '' ),
+        BottomNavigationBarItem(icon: Icon(Icons.message), label: '' ),
+        BottomNavigationBarItem(icon: Icon(Icons.person), label: '' ),
       ],),
       body: SafeArea(
         child: Column(
@@ -67,17 +69,13 @@ class _HomePageState extends State<HomePage> {
                     ),
                     padding: EdgeInsets.all(18.0),
                     child: Row(
-                      children: [
-                        Icon(Icons.search,
-                        color: Colors.white,
-                        ),
-                        SizedBox(width: 10.0,
-                        ),
-                        Text('Search',
-                          style: TextStyle(
-                            color: Colors.white,
+                      children:  [
+                        Expanded(
+                          child: TextField(
+                            controller: My_Controller1,
                           ),
                         ),
+
                       ],
                     ),
                   ),
@@ -160,61 +158,137 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 25.0,),
-            
+            SizedBox(height: 35.0,),
+
+            //Exercise Begins
             Expanded(
-              child: Container(
-                padding: EdgeInsets.all(25.0),
-                color: Colors.grey[200],
-                child: Center(
-                  child: Column(
-                    children: [
-                      //Exercise Heading
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Exercises',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20.0,
-                            ),
-                          ),
-                          Icon(Icons.more_horiz),
-                        ],
-                      ),
-                      SizedBox(height: 20.0,),
-                      //ListView of Exercises
-                      Expanded(
-                        child: ListView(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Container(
+                  padding: EdgeInsets.all( 5.0),
+                  color: Colors.grey[200],
+                  child: Center(
+                    child: Column(
+                      children: [
+                        //Exercise Heading
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            ExerciseTile(
-                              icon: Icons.favorite,
-                              exerciseName: 'Speaking Skills',
-                              numberOfExercises: 14,
-                              color: Colors.amber,
+                            Text('Exercises',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                              ),
                             ),
-                            ExerciseTile(
-                              icon: Icons.person,
-                              exerciseName: 'Reading Skills',
-                              numberOfExercises: 12,
-                              color: Colors.red,
-                            ),
-                            ExerciseTile(
-                              icon: Icons.star,
-                              exerciseName: 'Writing Skills',
-                              numberOfExercises: 8,
-                              color: Colors.lightGreenAccent,
-                            ),
-                            ExerciseTile(
-                              icon: Icons.brightness_2,
-                              exerciseName: 'Comprehension Skills',
-                              numberOfExercises: 11,
-                              color: Colors.indigo,
-                            ),
+                            Icon(Icons.more_horiz),
                           ],
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 20.0,),
+                        //ListView of Exercises
+                        Expanded(
+                          child: ListView(
+                            children: [
+                              ExerciseTile(
+                                icon: Icons.favorite,
+                                exerciseName: 'Speaking Skills',
+                                numberOfExercises: 01,
+                                color: Colors.amber,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.person,
+                                exerciseName: 'Reading Skills',
+                                numberOfExercises: 02,
+                                color: Colors.red,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.star,
+                                exerciseName: 'Writing Skills',
+                                numberOfExercises: 03,
+                                color: Colors.lightGreenAccent,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.brightness_2,
+                                exerciseName: 'Comprehension Skills',
+                                numberOfExercises: 04,
+                                color: Colors.indigo,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.favorite,
+                                exerciseName: 'Speaking Skills',
+                                numberOfExercises: 05,
+                                color: Colors.amber,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.person,
+                                exerciseName: 'Reading Skills',
+                                numberOfExercises: 06,
+                                color: Colors.red,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.star,
+                                exerciseName: 'Writing Skills',
+                                numberOfExercises: 07,
+                                color: Colors.lightGreenAccent,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.brightness_2,
+                                exerciseName: 'Comprehension Skills',
+                                numberOfExercises: 08,
+                                color: Colors.indigo,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.favorite,
+                                exerciseName: 'Speaking Skills',
+                                numberOfExercises: 09,
+                                color: Colors.amber,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.person,
+                                exerciseName: 'Reading Skills',
+                                numberOfExercises: 10,
+                                color: Colors.red,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.star,
+                                exerciseName: 'Writing Skills',
+                                numberOfExercises: 11,
+                                color: Colors.lightGreenAccent,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.brightness_2,
+                                exerciseName: 'Comprehension Skills',
+                                numberOfExercises: 12,
+                                color: Colors.indigo,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.favorite,
+                                exerciseName: 'Speaking Skills',
+                                numberOfExercises: 13,
+                                color: Colors.amber,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.person,
+                                exerciseName: 'Reading Skills',
+                                numberOfExercises: 14,
+                                color: Colors.red,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.star,
+                                exerciseName: 'Writing Skills',
+                                numberOfExercises: 15,
+                                color: Colors.lightGreenAccent,
+                              ),
+                              ExerciseTile(
+                                icon: Icons.brightness_2,
+                                exerciseName: 'Comprehension Skills',
+                                numberOfExercises: 16,
+                                color: Colors.indigo,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
